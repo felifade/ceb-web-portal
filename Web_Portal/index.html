@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for Premium Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Main CSS stylesheet -->
@@ -51,6 +51,9 @@
                 <button class="nav-btn" id="nav-organigrama" onclick="switchTab('organigrama')">
                     <i class="fa-solid fa-sitemap"></i> <span>Organigrama y Funciones</span>
                 </button>
+                <button class="nav-btn" id="nav-normativa" onclick="switchTab('normativa')">
+                    <i class="fa-solid fa-scale-balanced"></i> <span>Normativa y Marco Legal</span>
+                </button>
             </nav>
             
             <div class="sidebar-footer">
@@ -77,6 +80,10 @@
                     <div class="search-results" id="search-results-box"></div>
                 </div>
                 <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle" title="Cambiar tema">
+                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-sun"></i>
+                    </button>
                     <div class="cycle-selector-container">
                         <i class="fa-regular fa-calendar-days select-calendar-icon"></i>
                         <select id="cycle-select" onchange="changeActiveCycle(this.value)">
@@ -100,11 +107,12 @@
                 <section class="page-section active" id="page-dashboard">
                     <div class="welcome-banner">
                         <div class="welcome-text">
-                            <h1 id="main-title">Sistema de Gestión Escolar CEB</h1>
-                            <p id="main-subtitle">Control integral de horarios, alumnos, docentes e inventarios compartidos institucionalmente.</p>
+                            <h1 id="main-title">Centro de Estudios de Bachillerato 5/4</h1>
+                            <p id="main-subtitle">Profr. Rafael Ramírez · Portal de Gestión Escolar</p>
                         </div>
                         <div class="banner-badge">
                             <span class="badge-tag">Ciclo 2026-2027</span>
+                            <span class="badge-tag" style="margin-left: 8px;">CCT: 13DBP0001Z</span>
                         </div>
                     </div>
 
@@ -236,6 +244,14 @@
                                 <span class="explore-btn" style="color: var(--accent-green);">Entrar a Organigrama <i class="fa-solid fa-arrow-right"></i></span>
                             </div>
                         </div>
+
+                        <div class="area-card" onclick="switchTab('normativa')" style="cursor:pointer">
+                            <div class="area-card-icon" style="background: linear-gradient(135deg, var(--accent-purple), #6d28d9);">
+                                <i class="fa-solid fa-scale-balanced"></i>
+                            </div>
+                            <h3>Normativa y Marco Legal</h3>
+                            <p>16 documentos normativos oficiales con buscador y lector integrado.</p>
+                        </div>
                     </div>
                 </section>
 
@@ -311,8 +327,8 @@
                                             <i class="fa-solid fa-calendar-week"></i> Vista por Semanas
                                         </button>
                                     </div>
-                                    <a href="../2.25.26/Calendario de Actividades Sem B 25-26.pdf" target="_blank" class="action-button-link btn-gold btn-small" style="margin-top: 0; padding: 8px 14px; font-size: 12px; height: 34px; display: flex; align-items: center; gap: 6px;">
-                                        <i class="fa-solid fa-file-pdf"></i> PDF Original
+                                    <a href="#" class="action-button-link btn-gold btn-small" style="margin-top: 0; padding: 8px 14px; font-size: 12px; height: 34px; display: flex; align-items: center; gap: 6px;" title="PDF no disponible localmente">
+                                        <i class="fa-solid fa-file-pdf"></i> PDF (No disponible)
                                     </a>
                                 </div>
                             </div>
@@ -1345,7 +1361,67 @@
                     </div>
                 </section>
 
+                <!-- 7. NORMATIVA Y MARCO LEGAL -->
+                <section class="page-section" id="page-normativa">
+                    <div class="page-header">
+                        <h1><i class="fa-solid fa-scale-balanced"></i> Normativa y Marco Legal</h1>
+                        <p>Consulta, búsqueda y lectura de los 16 documentos normativos oficiales de la DGB y el Marco Legal aplicable.</p>
+                    </div>
+
+                    <!-- Sub-tabs -->
+                    <div class="sub-tabs" id="normativa-sub-tabs">
+                        <button class="sub-tab-btn active" onclick="switchNormativaSubTab('catalogo')">📚 Catálogo</button>
+                        <button class="sub-tab-btn" onclick="switchNormativaSubTab('buscador')">🔍 Buscador</button>
+                        <button class="sub-tab-btn" onclick="switchNormativaSubTab('lector')">📖 Lector</button>
+                    </div>
+
+                    <!-- Catálogo -->
+                    <div class="sub-tab-content active" id="normativa-catalogo">
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px;">
+                            <button class="norma-category-chip active" onclick="filterNormaCategory('all')">Todos</button>
+                            <button class="norma-category-chip" onclick="filterNormaCategory('ley')">📜 Leyes</button>
+                            <button class="norma-category-chip" onclick="filterNormaCategory('acuerdo')">📋 Acuerdos</button>
+                            <button class="norma-category-chip" onclick="filterNormaCategory('protocolo')">🛡️ Protocolos</button>
+                            <button class="norma-category-chip" onclick="filterNormaCategory('curso')">🎓 Cursos-Taller</button>
+                            <button class="norma-category-chip" onclick="filterNormaCategory('modelo')">🏛️ Modelos</button>
+                        </div>
+                        <div class="norma-catalog" id="norma-catalog-grid">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Buscador -->
+                    <div class="sub-tab-content" id="normativa-buscador">
+                        <div class="norma-search-wrapper">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" class="norma-search-box" id="norma-search-input" placeholder="Buscar en los 16 documentos normativos..." oninput="searchNormas(this.value)">
+                        </div>
+                        <div id="norma-search-status" style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;"></div>
+                        <div class="norma-results" id="norma-search-results">
+                            <div style="text-align: center; padding: 60px 20px; color: var(--text-muted);">
+                                <i class="fa-solid fa-magnifying-glass" style="font-size: 48px; margin-bottom: 16px; opacity: 0.3;"></i>
+                                <p>Escribe al menos 3 caracteres para buscar en 1,187 páginas de normativa oficial.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lector -->
+                    <div class="sub-tab-content" id="normativa-lector">
+                        <div id="norma-reader-container">
+                            <div style="text-align: center; padding: 60px 20px; color: var(--text-muted);">
+                                <i class="fa-solid fa-book-open" style="font-size: 48px; margin-bottom: 16px; opacity: 0.3;"></i>
+                                <p>Selecciona un documento del catálogo o un resultado de búsqueda para abrirlo aquí.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
             </div>
+            
+            <footer class="portal-footer">
+                <div class="footer-logo">CEB 5/4 "Profr. Rafael Ramírez" · CCT: 13DBP0001Z</div>
+                <div>Dirección General de Bachillerato · Secretaría de Educación Pública</div>
+            </footer>
         </main>
     </div>
 
@@ -1359,5 +1435,7 @@
     <script src="app_horarios.js"></script>
     <script src="app_estructura.js"></script>
     <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/minisearch.min.js"></script>
+    <script src="normativa/normativa.js"></script>
 </body>
 </html>
