@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Presentación CEB 5/4</title>
+    <!-- Reveal.js Core -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    
+    <!-- Chalkboard Plugin CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.8);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --accent: #0056b3;
+            --text-color: #000000;
+            --heading-color: #000000;
+            --bg-gradient: linear-gradient(-45deg, #e0eafc, #cfdef3, #e0eafc);
+            --shadow-text: none;
+            --blockquote-bg: rgba(0, 86, 179, 0.1);
+            --code-bg: rgba(0,0,0,0.05);
+            /* 📓 Colores de la Libreta Digital (Modo Claro = negro elegante por defecto) */
+            --nb-title: #1a1a1a;
+            --nb-text: #2c2c2c;
+            --nb-strong: #000000;
+        }
+
+        body.dark-mode {
+            --glass-bg: rgba(30, 30, 40, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent: #00d2ff;
+            --text-color: #eeeeee;
+            --heading-color: #ffffff;
+            --bg-gradient: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+            --shadow-text: 0 2px 10px rgba(0,0,0,0.5);
+            --blockquote-bg: rgba(0, 210, 255, 0.1);
+            --code-bg: rgba(0,0,0,0.5);
+            /* 📓 Colores de la Libreta Digital (Modo Oscuro = colores de plumón) */
+            --nb-title: #d63031;
+            --nb-text: #0984e3;
+            --nb-strong: #d63031;
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            margin: 0;
+            overflow: hidden;
+            transition: background 0.5s ease, color 0.3s ease;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .reveal {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+        }
+        
+        /* FIX DESBORDE + CENTRADO FLEXIBLE */
+        .reveal .slides {
+            height: 100% !important; 
+        }
+
+        .reveal .slides section.present {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px !important;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            
+            display: flex !important;
+            flex-direction: column;
+            justify-content: flex-start;
+            
+            max-height: 85vh !important;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            scrollbar-width: thin;
+            text-align: left;
+            top: 50% !important;
+            transform: translateY(-50%) !important;
+            box-sizing: border-box;
+        }
+
+        /* 🚀 ESTILO TIPO GAMMA APP con LIBRETA DIGITAL */
+        /* Si la diapositiva tiene .digital-notebook, aplicamos Grid */
+        .reveal .slides section.present:has(.digital-notebook) {
+            display: grid !important;
+            grid-template-columns: 1fr 1.3fr; /* Izquierda: Texto de la clase | Derecha: Libreta */
+            gap: 25px;
+            align-items: center;
+            align-content: center;
+        }
+
+        /* Todo lo que NO sea la libreta va a la izquierda */
+        .reveal .slides section.present:has(.digital-notebook) > *:not(.digital-notebook) {
+            grid-column: 1;
+        }
+
+        /* La libreta va a la derecha */
+        .reveal .slides section.present:has(.digital-notebook) > .digital-notebook {
+            grid-column: 2;
+            grid-row: 1 / span 10;
+            margin: 0 !important;
+        }
+
+        /* 📓 COMPONENTE LIBRETA DIGITAL */
+        .digital-notebook {
+            background-color: #fdfbf7;
+            /* Diseño de rayas de cuaderno */
+            background-image: linear-gradient(transparent 93%, #c8e6f5 7%);
+            background-size: 100% 28px; /* Renglones más compactos */
+            line-height: 28px;
+            padding: 18px 22px 22px 52px;
+            position: relative;
+            border-radius: 6px 12px 12px 6px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+            font-family: 'Kalam', cursive;
+            font-size: 0.95em;
+            color: var(--nb-text);
+            max-height: 78vh;
+            overflow-y: auto;
+            border-left: 3px solid #e0e0e0;
+            border-right: 1px solid #e0e0e0;
+            transition: color 0.3s ease;
+            /* Scrollbar bonita */
+            scrollbar-width: thin;
+            scrollbar-color: #c0c0c0 transparent;
+        }
+        .digital-notebook::-webkit-scrollbar { width: 6px; }
+        .digital-notebook::-webkit-scrollbar-thumb { background: #c0c0c0; border-radius: 3px; }
+
+        /* Margen rojo izquierdo de la libreta */
+        .digital-notebook::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0; left: 40px;
+            width: 2px;
+            background: #ff7675;
+        }
+
+        /* Estilizar los textos dentro de la libreta (Respeta CSS Variables del tema) */
+        .reveal .digital-notebook h1, .reveal .digital-notebook h2, .reveal .digital-notebook h3 {
+            font-family: 'Kalam', cursive !important;
+            color: var(--nb-title) !important;
+            font-weight: 700 !important;
+            margin-top: 6px !important;
+            margin-bottom: 4px !important;
+            text-shadow: none !important;
+            border: none !important;
+            line-height: 1.3 !important;
+            font-size: 1.15em !important;
+        }
+        
+        .reveal .digital-notebook p, .reveal .digital-notebook li {
+            font-family: 'Kalam', cursive !important;
+            color: var(--nb-text) !important;
+            font-weight: 400 !important;
+            line-height: 26px !important;
+            margin-bottom: 2px !important;
+        }
+
+        .reveal .digital-notebook strong {
+            color: var(--nb-strong) !important;
+        }
+
+        .reveal .digital-notebook em {
+            color: var(--nb-text) !important;
+            opacity: 0.8;
+        }
+
+        .reveal .digital-notebook hr {
+            display: block !important;
+            border: none;
+            border-top: 1px dashed #ccc;
+            margin: 8px 0;
+        }
+
+        .reveal .digital-notebook ol {
+            padding-left: 1.2em;
+        }
+
+        /* Ocultar secciones no activas correctamente */
+        .reveal .slides section:not(.present) {
+            display: none !important;
+        }
+        
+        /* Typography */
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            color: var(--heading-color);
+            text-shadow: var(--shadow-text);
+            text-transform: none;
+            margin-bottom: 20px;
+            margin-top: 0;
+            /* Animación de entrada suave (Typewriter effect simulation) */
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .reveal h1 { font-size: 2.2em; color: var(--accent); }
+        .reveal h2 { font-size: 1.6em; border-bottom: 2px solid var(--accent); padding-bottom: 5px; display: inline-block;}
+        .reveal h3 { font-size: 1.3em; }
+        
+        .reveal p, .reveal li {
+            font-size: 0.95em;
+            line-height: 1.5;
+            font-weight: 400;
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        
+        .reveal ul {
+            display: block;
+            margin-left: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        /* Imágenes Premium */
+        .reveal img {
+            max-height: 40vh;
+            width: auto;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            margin: 15px auto !important;
+            border: 2px solid var(--glass-border);
+            display: block;
+        }
+        
+        /* Blockquotes */
+        .reveal blockquote {
+            border-left: 5px solid var(--accent);
+            background: var(--blockquote-bg);
+            padding: 15px 20px;
+            font-style: italic;
+            border-radius: 0 10px 10px 0;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: none;
+            text-align: left;
+            box-sizing: border-box;
+        }
+        
+        .reveal strong {
+            color: var(--heading-color);
+            font-weight: 700;
+        }
+        
+        .reveal hr { display: none; }
+
+        /* Botón de Tema (esquina superior izquierda, fuera del área de diapositivas y controles de reveal) */
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-color);
+            padding: 8px 14px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85em;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        #theme-toggle:hover { transform: scale(1.05); }
+
+        /* Botón de regresar al menú de semanas */
+        #back-to-menu {
+            position: fixed;
+            top: 65px; /* Apilado debajo del botón de modo de color */
+            left: 20px;
+            z-index: 1000;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-color);
+            padding: 8px 14px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85em;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 90px; /* Ancho fijo para alineación simétrica */
+        }
+        #back-to-menu:hover { transform: scale(1.05); }
+
+        /* Estilos específicos para tablas dentro de la Libreta Digital */
+        .reveal .digital-notebook table {
+            width: 100% !important;
+            margin: 10px 0 !important;
+            border-collapse: collapse !important;
+            font-family: 'Kalam', cursive !important;
+            font-size: 0.9em !important;
+        }
+        .reveal .digital-notebook th, .reveal .digital-notebook td {
+            border: 1px dashed #c8e6f5 !important;
+            padding: 4px 8px !important;
+            line-height: 22px !important;
+            text-align: left !important;
+        }
+        .reveal .digital-notebook th {
+            color: var(--nb-title) !important;
+            font-weight: 700 !important;
+        }
+        .reveal .digital-notebook td {
+            color: var(--nb-text) !important;
+        }
+        .reveal .digital-notebook tr:hover {
+            background-color: rgba(200, 230, 245, 0.2) !important;
+        }
+
+        /* Controles Manuales para Pizarra */
+        .chalkboard-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+        .chalk-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+        .chalk-btn:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+    
+    <button id="theme-toggle">🌙 Modo Oscuro</button>
+    <a href="Portal_Semana_1.html" id="back-to-menu"><i class="fa-solid fa-house" style="margin-right: 5px;"></i> Menú</a>
+
+    <div class="chalkboard-controls">
+        <button class="chalk-btn" onclick="RevealChalkboard.toggleNotesCanvas()">🖍️ Dibujar en Slide</button>
+        <button class="chalk-btn" onclick="RevealChalkboard.toggleChalkboard()">⬛ Pizarra Negra</button>
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+            <!-- CONTENT_PLACEHOLDER -->
+        </div>
+    </div>
+    
+    <!-- Reveal.js Core & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.min.js"></script>
+    <!-- Plugin Pizarra Mágica (Chalkboard) -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@latest/chalkboard/plugin.js"></script>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        toggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            toggleBtn.innerText = body.classList.contains('dark-mode') ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+        });
+
+        // Inicializar Reveal con center en FALSE para que funcione nuestro Flexbox Scroll
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: false, 
+            slideNumber: 'c/t',
+            transition: 'zoom',
+            backgroundTransition: 'fade',
+            plugins: [ RevealMarkdown, RevealChalkboard ],
+            chalkboard: {
+                boardmarkerWidth: 3,
+                chalkWidth: 7,
+                chalkEffect: 1.0,
+                src: null,
+                readOnly: undefined,
+                toggleChalkboardButton: { left: "150px", bottom: "20px", top: "auto", right: "auto" },
+                toggleNotesButton: { left: "200px", bottom: "20px", top: "auto", right: "auto" },
+                theme: "chalkboard"
+            }
+        });
+    </script>
+</body>
+</html>

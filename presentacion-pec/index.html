@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentación PEC 2025-2026 - CEB 5/4</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Panel de navegación superior (Indicador de Progreso) -->
+  <header class="navbar">
+    <div class="logo-area">
+      <span class="logo-text">CEB 5/4 "Profr. Rafael Ramírez"</span>
+    </div>
+    <div class="slide-indicator">
+      Diapositiva <span id="current-slide-num">1</span> de 10
+    </div>
+  </header>
+
+  <!-- Contenedor Principal de Slides -->
+  <main class="slides-container">
+    <!-- Slide 1: Portada -->
+    <section class="slide active" id="slide-1">
+      <div class="slide-content cover-slide">
+        <div class="badge">Ciclo Escolar 2025-2026</div>
+        <h1>PROYECTO ESCOLAR COMUNITARIO (PEC)</h1>
+        <h2 style="margin-bottom: 1.5rem;">Construyendo comunidad a través del aprendizaje colaborativo</h2>
+        <div style="font-family: var(--font-title); font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin-bottom: 2.5rem; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+          <span style="color: var(--accent-matutino);">☀️ Turno Matutino: "Tejiendo Paz y Bienestar en el CEB 5/4"</span>
+          <span style="color: var(--text-muted);">|</span>
+          <span style="color: var(--accent-vespertino);">🌙 Turno Vespertino: "Vida Sana, Vida Plena"</span>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-item"><strong>Institución:</strong> Centro de Estudios de Bachillerato 5/4</div>
+          <div class="meta-item"><strong>Semestre:</strong> Cuarto Semestre (Grupos M401-M406 y V407-V410)</div>
+          <div class="meta-item"><strong>Periodo:</strong> Segundo y Tercer Parcial</div>
+        </div>
+        <div class="action-buttons">
+          <button class="btn btn-primary" onclick="nextSlide()">Comenzar Presentación</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 2: ¿Qué es el PEC? -->
+    <section class="slide" id="slide-2">
+      <div class="slide-content">
+        <h2 class="slide-title">¿Qué es el Proyecto Escolar Comunitario (PEC)?</h2>
+        <div class="concept-grid">
+          <div class="concept-text">
+            <p class="highlight-text">El Proyecto Escolar Comunitario es una estrategia interdisciplinaria que integra los aprendizajes de diversas asignaturas para atender problemáticas relevantes de la comunidad escolar.</p>
+            <p>A través de proyectos colaborativos con impacto social, los alumnos asumen un rol activo de investigación e intervención, conectando la teoría con el entorno de nuestro Centro de Estudios de Bachillerato 5/4.</p>
+          </div>
+          <div class="concept-card">
+            <h4>Ejes Rectores</h4>
+            <ul>
+              <li>🌱 Transversalidad Curricular</li>
+              <li>🤝 Aprendizaje Significativo y Solidario</li>
+              <li>🗺️ Impacto Comunitario y Familiar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Objetivos Generales -->
+    <section class="slide" id="slide-3">
+      <div class="slide-content">
+        <h2 class="slide-title">Objetivos Generales del PEC</h2>
+        <div class="objectives-grid">
+          <div class="obj-card">
+            <div class="obj-num">01</div>
+            <h3>Fortalecer el Trabajo Interdisciplinario</h3>
+            <p>Vincular y articular los saberes específicos de cada asignatura en torno a un problema real de la escuela.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num">02</div>
+            <h3>Promover el Aprendizaje Significativo</h3>
+            <p>Fomentar la aplicación práctica de conceptos académicos en soluciones reales y concretas.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num">03</div>
+            <h3>Vincular con Problemáticas Reales</h3>
+            <p>Conectar los contenidos del aula directamente con la reality socioemocional y comunitaria del plantel.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num">04</div>
+            <h3>Habilidades Clave</h3>
+            <p>Desarrollar capacidades de investigación científica, análisis crítico y comunicación efectiva en los estudiantes.</p>
+          </div>
+          <div class="obj-card">
+            <div class="obj-num">05</div>
+            <h3>Participación Colectiva</h3>
+            <p>Fomentar y estructurar la integración activa de los estudiantes, docentes y las familias de la comunidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Red Interdisciplinaria -->
+    <section class="slide" id="slide-4">
+      <div class="slide-content">
+        <h2 class="slide-title">Red Interdisciplinaria Completa (Ambos Turnos)</h2>
+        <p class="subtitle" style="margin-bottom: 1.5rem;">En el CEB 5/4 todas las asignaturas de cuarto semestre se integran transversalmente desde el primer parcial.</p>
+        
+        <div class="subjects-comun-section" style="margin-bottom: 2rem;">
+          <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">Asignaturas del Tronco Común</h4>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem;">
+            <div class="subject-tag" style="border-left: 4px solid var(--accent-matutino);">📚 Pensamiento Literario</div>
+            <div class="subject-tag" style="border-left: 4px solid var(--accent-matutino);">🗺️ Espacio y Sociedad</div>
+            <div class="subject-tag" style="border-left: 4px solid var(--accent-matutino);">🧪 Reacciones Químicas</div>
+            <div class="subject-tag" style="border-left: 4px solid var(--accent-vespertino);">🧠 Formación Socioemocional IV</div>
+            <div class="subject-tag" style="border-left: 4px solid var(--accent-vespertino);">📜 Conciencia Histórica I</div>
+            <div class="subject-tag" style="border-left: 4px solid var(--accent-vespertino);">👥 Ciencias Sociales III</div>
+            <div class="subject-tag" style="border-left: var(--accent-gold) 4px solid;">🗣️ Inglés IV</div>
+            <div class="subject-tag" style="border-left: var(--accent-gold) 4px solid;">💻 Taller de Cultura Digital</div>
+            <div class="subject-tag" style="border-left: var(--accent-gold) 4px solid;">📐 Temas Selectos de Matemáticas I</div>
+          </div>
+        </div>
+
+        <div class="capacitaciones-section">
+          <h4 style="font-family: var(--font-title); font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-main);">Capacitaciones Técnicas de Apoyo</h4>
+          <div class="caps-flex">
+            <div class="cap-pill text-pill">🌐 Comunidades Virtuales</div>
+            <div class="cap-pill text-pill">🔧 Mantenimiento y Redes de Cómputo</div>
+            <div class="cap-pill aula-pill">👩‍🏫 Intervención en el Aula</div>
+            <div class="cap-pill aula-pill">🏫 Intervención Escolar</div>
+            <div class="cap-pill salud-pill">🍎 Nutrición</div>
+            <div class="cap-pill salud-pill">🏥 Higiene y Salud Comunitaria</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: Productos Finales -->
+    <section class="slide" id="slide-5">
+      <div class="slide-content">
+        <h2 class="slide-title">Productos Finales Integradores</h2>
+        <div class="split-grid">
+          <div class="prod-card border-matutino">
+            <div class="prod-header bg-matutino">Turno Matutino</div>
+            <div class="prod-body">
+              <h3>Tejiendo Paz y Bienestar</h3>
+              <p class="prod-type"><strong>Producto:</strong> Lona Infográfica (52 x 180 cm)</p>
+              <ul class="prod-details">
+                <li>📍 Mapeo de violencias y zonas críticas</li>
+                <li>📊 Diagnóstico estadístico y causas</li>
+                <li>🩹 Propuestas prácticas de solución</li>
+                <li>👨‍👩‍👧‍👦 Exposición oral ante padres de familia</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="prod-card border-vespertino">
+            <div class="prod-header bg-vespertino">Turno Vespertino</div>
+            <div class="prod-body">
+              <h3>Vida Sana, Vida Plena</h3>
+              <p class="prod-type"><strong>Producto:</strong> Cómic Elaborado a Mano</p>
+              <ul class="prod-details">
+                <li>📍 Identificación de hábitos tóxicos</li>
+                <li>🧠 Consecuencias físicas y emocionales</li>
+                <li>💡 Alternativas de vida saludables</li>
+                <li>📖 Exposición tipo galería ante padres</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: Contribución de Capacitaciones -->
+    <section class="slide" id="slide-6">
+      <div class="slide-content">
+        <h2 class="slide-title">Contribución de las Capacitaciones</h2>
+        <div class="table-container">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Capacitación</th>
+                <th>Asignaturas Implicadas</th>
+                <th>Aportación al PEC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="bold-td">💻 Tecnologías</td>
+                <td>Comunidades Virtuales / Mantenimiento</td>
+                <td>Uso responsable de redes sociales, prevención de riesgos digitales y ciudadanía digital.</td>
+              </tr>
+              <tr>
+                <td class="bold-td">🏫 Auxiliar Educativo</td>
+                <td>Intervención en el Aula / Intervención Escolar</td>
+                <td>Análisis exhaustivo del clima escolar, técnicas de convivencia pacífica y resolución de conflictos.</td>
+              </tr>
+              <tr>
+                <td class="bold-td">🍎 Salud Comunitaria</td>
+                <td>Nutrición / Higiene y Salud</td>
+                <td>Promoción activa de hábitos saludables, alimentación equilibrada y bienestar integral del estudiante.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: Organización y Cronograma del 3 de Junio -->
+    <section class="slide" id="slide-7">
+      <div class="slide-content">
+        <h2 class="slide-title">Organización del Evento de Presentación</h2>
+        <p class="subtitle" style="margin-bottom: 1.5rem;">Fecha única: <strong>Miércoles 03 de Junio de 2026</strong> | Padres y Madres de Familia invitados</p>
+        
+        <div class="agenda-container">
+          <div class="agenda-column">
+            <h4 class="agenda-title accent-blue">Turno Matutino — 9:30 hrs</h4>
+            <div class="timeline-v">
+              <div class="time-item">
+                <span class="time-val">8:00 - 9:00</span>
+                <span class="time-desc">Montaje de Lonas (52 x 180 cm) y clips plegables</span>
+              </div>
+              <div class="time-item">
+                <span class="time-val">9:30 - 9:45</span>
+                <span class="time-desc">Bienvenida e Inauguración (Audiorama del Plantel)</span>
+              </div>
+              <div class="time-item">
+                <span class="time-val">9:50 - 10:50</span>
+                <span class="time-desc">Recorrido oral guiado (Estaciones M401 a M406)</span>
+              </div>
+              <div class="time-item">
+                <span class="time-val">10:50 - 11:20</span>
+                <span class="time-desc">Snack saludable y firmas en Muro de Compromisos</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="agenda-column">
+            <h4 class="agenda-title accent-green">Turno Vespertino — 14:00 hrs</h4>
+            <div class="timeline-v">
+              <div class="time-item">
+                <span class="time-val">13:00 - 13:45</span>
+                <span class="time-desc">Montaje de Cómics colgantes con pinzas en los pasillos</span>
+              </div>
+              <div class="time-item">
+                <span class="time-val">14:00 - 14:15</span>
+                <span class="time-desc">Apertura en el Audiorama (Prof. Pedro Camargo)</span>
+              </div>
+              <div class="time-item">
+                <span class="time-val">14:20 - 15:00</span>
+                <span class="time-desc">Recorrido libre y explicaciones (Zonas A a D - V407 a V410)</span>
+              </div>
+              <div class="time-item">
+                <span class="time-val">15:10 - 15:30</span>
+                <span class="time-desc">Muro de Compromisos, Cierre y Foto Grupal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Evidencias del Proyecto -->
+    <section class="slide" id="slide-8">
+      <div class="slide-content" style="max-height: 90%;">
+        <h2 class="slide-title">Galería de Evidencias PEC</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="images/aula.jpg" alt="Trabajo en Aula">
+            <p class="img-caption">Trabajo de investigación en el aula</p>
+          </div>
+          
+          <div class="gallery-item">
+            <img src="images/infografias.jpg" alt="Elaboración de Infografías">
+            <p class="img-caption">Elaboración y diseño de Infografías y Lonas</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/montaje.jpg" alt="Montaje de Exposiciones">
+            <p class="img-caption">Instalación colgante en pasillos</p>
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/padres.jpg" alt="Participación de Padres">
+            <p class="img-caption">Padres de familia interactuando</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9: Resultados y Logros -->
+    <section class="slide" id="slide-9">
+      <div class="slide-content">
+        <h2 class="slide-title">Resultados y Logros del PEC</h2>
+        <div class="metrics-container">
+          <div class="metric-card">
+            <span class="m-val">100%</span>
+            <span class="m-label">Participación Estudiantil</span>
+            <p class="m-desc">Integración activa de 10 grupos de Cuarto Semestre de ambos turnos.</p>
+          </div>
+          
+          <div class="metric-card">
+            <span class="m-val">80+</span>
+            <span class="m-label">Productos Expuestos</span>
+            <p class="m-desc">Lonas de infografía detalladas y cómics preventivos elaborados a mano.</p>
+          </div>
+
+          <div class="metric-card">
+            <span class="m-val">200+</span>
+            <span class="m-label">Padres de Familia</span>
+            <p class="m-desc">Asistencia al recorrido y registro de compromisos saludables en el mural escolar.</p>
+          </div>
+        </div>
+
+        <div class="achievements-section">
+          <h3>Habilidades Socioemocionales y Conciencia Ciudadana</h3>
+          <ul class="ach-bullets">
+            <li>✅ Trabajo colaborativo sólido en equipos interdisciplinarios.</li>
+            <li>✅ Sensibilización escolar profunda sobre la prevención de la violencia.</li>
+            <li>✅ Promoción activa y registro de compromisos reales para una vida saludable.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 10: Cierre e Inspiración -->
+    <section class="slide" id="slide-10">
+      <div class="slide-content">
+        <h2 class="slide-title">Gracias por ser parte del cambio</h2>
+        <div class="cierre-grid">
+          <div class="cierre-main">
+            <blockquote class="cierre-quote">
+              "El aprendizaje cobra sentido cuando se transforma en acciones concretas que mejoran y tejen comunidad."
+            </blockquote>
+            
+            <div class="muro-interactivo-cierre">
+              <h4>Muro Escolar de Compromisos (Simulación Interactiva)</h4>
+              <p class="subtitle" style="margin-bottom: 1rem;">Haz clic en un post-it para ver los compromisos de los padres y alumnos:</p>
+              <div class="postits-flex">
+                <div class="postit p-blue" onclick="revealPostit(this)">
+                  <span class="p-preview">Compromiso Convivencia</span>
+                  <p class="p-detail">"Me comprometo a escuchar más a mis hijos y evitar la violencia verbal en casa."</p>
+                </div>
+                <div class="postit p-green" onclick="revealPostit(this)">
+                  <span class="p-preview">Compromiso Salud</span>
+                  <p class="p-detail">"En mi familia cambiaremos los refrescos por agua de fruta natural."</p>
+                </div>
+                <div class="postit p-yellow" onclick="revealPostit(this)">
+                  <span class="p-preview">Compromiso Respeto</span>
+                  <p class="p-detail">"Propongo mantener limpios los pasillos y áreas comunes del CEB 5/4."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="firma-block">
+            <h4>Academia de Cuarto Semestre</h4>
+            <div class="firmantes">
+              <p><strong>Mtra. Claudia Nayeli González Gardini</strong><br><span class="muted-text">Líder de Academia - Turno Matutino</span></p>
+              <p><strong>Mtro. Felipe López Salazar</strong><br><span class="muted-text">Líder de Academia - Turno Matutino</span></p>
+            </div>
+            <div class="dgb-sig">CEB 5/4 “Profr. Rafael Ramírez”</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Controles flotantes inferiores -->
+  <footer class="controls-bar">
+    <div class="nav-controls">
+      <button class="btn-control" id="prev-btn" onclick="prevSlide()" disabled>⬅️</button>
+      <button class="btn-control" id="next-btn" onclick="nextSlide()">➡️</button>
+    </div>
+    <div class="progress-bar-container">
+      <div class="progress-bar" id="progress-indicator"></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
