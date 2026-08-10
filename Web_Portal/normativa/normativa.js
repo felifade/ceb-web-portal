@@ -85,15 +85,43 @@ async function initCatalog() {
         const res = await fetch('normativa/data/catalog.json');
         if (!res.ok) throw new Error("No se pudo cargar el catálogo de normativa");
         CATALOG = await res.json();
-        
-        setupCategoryFilters();
-        renderCatalog();
     } catch (e) {
-        console.error("Error cargando catálogo:", e);
-        const grid = document.getElementById('norma-catalog-grid');
-        if (grid) grid.innerHTML = `<p style="color:red">Error al cargar el catálogo: ${e.message}</p>`;
+        console.warn("Fetch falló (modo local). Usando catálogo embebido.", e.message);
+        CATALOG = FALLBACK_CATALOG;
     }
+    
+    setupCategoryFilters();
+    renderCatalog();
 }
+
+// Catálogo embebido para modo file:// (sin servidor)
+const FALLBACK_CATALOG = {
+  "version": "1.0", "updated": "2026-05-09",
+  "categories": {
+    "legal":      { "name": "Marco legal federal", "short": "Legal", "color": "#1e3a5f", "tint": "#e8eef5", "icon": "scale" },
+    "modelo":     { "name": "Modelo educativo · NEM / MCCEMS", "short": "Modelo", "color": "#7a4e2d", "tint": "#f5ece2", "icon": "book" },
+    "protocolos": { "name": "Protocolos de plantel", "short": "Protocolos", "color": "#3d5e3d", "tint": "#e8efe8", "icon": "shield" },
+    "etica":      { "name": "Ética y mejora continua", "short": "Ética", "color": "#6b4a6b", "tint": "#efe8ef", "icon": "compass" }
+  },
+  "documents": [
+    { "id": 2, "abbr": "CPEUM", "title": "Constitución Política de los Estados Unidos Mexicanos", "short": "Constitución Política de los EUM", "category": "legal", "pages": 403, "issuer": "Congreso de la Unión", "year": 1917, "drive_id": "1r2q70yWy2r24QJZRUQaOaCw9cRlNmlq1", "tags": ["constitución","garantías","derechos humanos","artículo 3"] },
+    { "id": 3, "abbr": "LGE", "title": "Ley General de Educación", "short": "Ley General de Educación", "category": "legal", "pages": 82, "issuer": "Congreso de la Unión", "year": 2019, "drive_id": "1hWihsMHit05Y7E_fXa8PW8wtyheR3KvP", "tags": ["ley general","SEP","educación","obligatoriedad"] },
+    { "id": 1, "abbr": "LGRA", "title": "Ley General de Responsabilidades Administrativas", "short": "Ley Gral. de Responsabilidades Administrativas", "category": "legal", "pages": 79, "issuer": "Congreso de la Unión", "year": 2016, "drive_id": "1ZCASyt754ZMyPDFwc1hz5tL2P7ReRC7F", "tags": ["responsabilidades","faltas administrativas","sanciones","servidor público"] },
+    { "id": 4, "abbr": "LGDNNA", "title": "Ley General de los Derechos de Niñas, Niños y Adolescentes", "short": "Ley Gral. de Derechos de NNA", "category": "legal", "pages": 97, "issuer": "Congreso de la Unión", "year": 2014, "drive_id": "1-SjGvu3M_5T4G4eIo1pxpihqkTZ7LLjv", "tags": ["NNA","derechos","interés superior","protección"] },
+    { "id": 5, "abbr": "LGAMVLV", "title": "Ley General de Acceso de las Mujeres a una Vida Libre de Violencias", "short": "Ley Gral. Acceso Mujeres Vida Libre de Violencias", "category": "legal", "pages": 88, "issuer": "Congreso de la Unión", "year": 2007, "drive_id": "1CJ5wYrgfjQibut_AqU1RmfnRWYlcphG7", "tags": ["género","violencia","alerta","mujeres","perspectiva"] },
+    { "id": 14, "abbr": "MCCEMS-25", "title": "Modelo Educativo 2025 · Marco Curricular Común de la EMS", "short": "Modelo Educativo 2025 (MCCEMS)", "category": "modelo", "pages": 68, "issuer": "SEP · SEMS", "year": 2025, "drive_id": "1Dj-T6upm7tvrlbn3K7LbJZ52BfNwV8SH", "tags": ["NEM","MCCEMS","modelo educativo","currículo"] },
+    { "id": 9, "abbr": "AC-21/08/25", "title": "Acuerdo 21/08/25 — Marco Curricular Común de la EMS (DOF)", "short": "Acuerdo 21/08/25 — MCCEMS (DOF)", "category": "modelo", "pages": 17, "issuer": "SEP · DOF", "year": 2025, "drive_id": "12DGy1KvDRl-daGW2FPofkavxC1wTu3J8", "tags": ["acuerdo","DOF","MCCEMS","currículo"] },
+    { "id": 15, "abbr": "PAEC", "title": "Programa Aula, Escuela y Comunidad (PAEC) · MCCEMS", "short": "Programa Aula, Escuela y Comunidad", "category": "modelo", "pages": 32, "issuer": "SEP · SEMS", "year": 2025, "drive_id": "1QSiV_4pOQOuvBK63NFASTRaIEE8b9txv", "tags": ["PAEC","comunidad","aula","MCCEMS"] },
+    { "id": 6, "abbr": "CT-1", "title": "Curso-Taller 1: Hacia una práctica docente colaborativa en las áreas de acceso al conocimiento", "short": "Curso-Taller 1 · Acceso al conocimiento", "category": "modelo", "pages": 97, "issuer": "SEP · SEMS", "year": 2024, "drive_id": "1tj21l5K4msG-v7uHfqaQUkKA6jatVo1m", "tags": ["curso-taller","colaborativa","acceso al conocimiento"] },
+    { "id": 12, "abbr": "CT-2", "title": "Curso-Taller 2: Hacia una práctica docente colaborativa en los recursos sociocognitivos", "short": "Curso-Taller 2 · Recursos sociocognitivos", "category": "modelo", "pages": 86, "issuer": "SEP · SEMS", "year": 2024, "drive_id": "1Qu2NYOMJNc4x6OrX2Ky1qTqDEsxp9JYS", "tags": ["curso-taller","sociocognitivos","colaborativa"] },
+    { "id": 7, "abbr": "PCAE", "title": "Protocolo para la Convivencia Armónica del Estudiantado en los Planteles Federales de EMS", "short": "Protocolo de Convivencia Armónica", "category": "protocolos", "pages": 32, "issuer": "SEP · SEMS", "year": 2023, "drive_id": "17ETQlycyj7Oyv-vL0YA_mykWIwu9pyEM", "tags": ["convivencia","protocolo","estudiantado"] },
+    { "id": 10, "abbr": "PRUE", "title": "Protocolo para la Protección y Cuidado del Estudiantado en la Revisión de Útiles Escolares", "short": "Protocolo de Revisión de Útiles", "category": "protocolos", "pages": 51, "issuer": "SEP · SEMS", "year": 2024, "drive_id": "1eVWUnnfg22yDzVWL2CBUdwHpzoE7zves", "tags": ["útiles","revisión","protocolo","protección"] },
+    { "id": 11, "abbr": "PSP", "title": "Protocolos de Seguridad para los Planteles Federales de EMS", "short": "Protocolos de Seguridad de Plantel", "category": "protocolos", "pages": 56, "issuer": "SEP · SEMS", "year": 2024, "drive_id": "1AA9moXfviAqu3C60fu9IORXPd89YIMnv", "tags": ["seguridad","protocolo","plantel","emergencia"] },
+    { "id": 13, "abbr": "AC-04/07/23", "title": "Acuerdo 04/07/23 — Código de Conducta de la Secretaría de Educación Pública", "short": "Código de Conducta SEP (Acuerdo 04/07/23)", "category": "etica", "pages": 16, "issuer": "SEP", "year": 2023, "drive_id": "1EFrlSyHpp4RluuuH5GV2VtGz0TEs9Ylp", "tags": ["código de conducta","ética","servidor público"] },
+    { "id": 16, "abbr": "DCT", "title": "Declaratoria Cero Tolerancia", "short": "Declaratoria Cero Tolerancia", "category": "etica", "pages": 11, "issuer": "SEP", "year": 2023, "drive_id": "1rb5D4DSiRy2v5KMya3lfWthzHeYvc4Cg", "tags": ["cero tolerancia","declaratoria","violencia"] },
+    { "id": 8, "abbr": "LPMC-24", "title": "Lineamientos para la planeación de la mejora continua 2024", "short": "Lineamientos Mejora Continua 2024", "category": "etica", "pages": 19, "issuer": "SEP · SEMS", "year": 2024, "drive_id": "1uwqvWMBgLA0zAawm5VeBjOOPWQ4mc3I9", "tags": ["mejora continua","planeación","PEC","lineamientos"] }
+  ]
+};
 
 function setupCategoryFilters() {
     const filterContainer = document.getElementById('norma-category-filters');
