@@ -679,7 +679,7 @@ body {
     align-items: center;
     gap: 12px;
     font-size: 18px;
-    color: #fff;
+    color: var(--text-primary);
     font-family: var(--font-heading);
 }
 
@@ -3155,7 +3155,7 @@ body {
 .dir-stat-card .stat-info h3 {
     font-size: 20px;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 2px;
 }
 
@@ -3184,7 +3184,7 @@ body {
     font-family: var(--font-heading);
     font-size: 18px;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -3313,7 +3313,7 @@ body {
     font-family: var(--font-heading);
     font-size: 15px;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-primary);
     text-align: center;
     margin-bottom: 4px;
     line-height: 1.3;
