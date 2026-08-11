@@ -523,7 +523,7 @@
                                 <!-- View Toggle and Header -->
                                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 10px;">
                                     <h3 style="margin: 0; color: #fff; font-size: 16px;"><i class="fa-solid fa-list-check"></i> Detalle de Asignaciones</h3>
-                                    <div class="view-toggle-container" style="margin-top: 0; display: flex; background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 8px; padding: 2px;">
+                                    <div class="view-toggle-container" style="margin-top: 0; display: flex; background: var(--border-color); border: 1px solid var(--border-color); border-radius: 8px; padding: 2px;">
                                         <button class="view-toggle-btn active" id="btn-est-view-list" onclick="switchEstView('list')">
                                             <i class="fa-solid fa-list-ul"></i> Vista de Lista
                                         </button>
@@ -629,30 +629,30 @@
                                                     <stop offset="100%" style="stop-color:hsl(160, 80%, 35%);stop-opacity:1" />
                                                 </linearGradient>
                                                 <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-                                                    <path d="M 0 1 L 10 5 L 0 9 z" fill="rgba(255,255,255,0.4)" />
+                                                    <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--text-muted)" />
                                                 </marker>
                                             </defs>
                                             <!-- Steps nodes -->
                                             <g class="flow-node" onclick="showFlowDetail('1. Recepción de Documentos', 'El estudiante entrega la papelería requerida de acuerdo a la convocatoria oficial. Se verifica curp, acta de nacimiento, certificados previos.')">
                                                 <rect x="20" y="80" width="110" height="60" rx="10" fill="url(#grad-purple)" />
                                                 <text x="75" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">1. Recepción</text>
-                                                <text x="75" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Documental</text>
+                                                <text x="75" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Documental</text>
                                             </g>
                                             
-                                            <path d="M 130 110 L 180 110" stroke="rgba(255,255,255,0.2)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
+                                            <path d="M 130 110 L 180 110" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
                                             
                                             <g class="flow-node" onclick="showFlowDetail('2. Cotejo y Validación', 'Control escolar verifica en sistemas oficiales de la SEP la veracidad de la información y asigna grupo según disponibilidad y promedio.')">
                                                 <rect x="190" y="80" width="110" height="60" rx="10" fill="url(#grad-cyan)" />
                                                 <text x="245" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">2. Cotejo</text>
-                                                <text x="245" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">y Validación</text>
+                                                <text x="245" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">y Validación</text>
                                             </g>
                                             
-                                            <path d="M 300 110 L 350 110" stroke="rgba(255,255,255,0.2)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
+                                            <path d="M 300 110 L 350 110" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
                                             
                                             <g class="flow-node" onclick="showFlowDetail('3. Alta en Matrícula', 'Se genera la matrícula definitiva del estudiante en Google Sheets, se le asigna su tutor y correo institucional de estudiante.')">
                                                 <rect x="360" y="80" width="110" height="60" rx="10" fill="url(#grad-green)" />
                                                 <text x="415" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">3. Alta</text>
-                                                <text x="415" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">en Sistema</text>
+                                                <text x="415" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">en Sistema</text>
                                             </g>
                                         </svg>
                                         <div class="flow-detail-box" id="detail-inscripcion">
@@ -695,23 +695,23 @@
                                             <g class="flow-node" onclick="showFlowDetailDoc('1. Carga Académica', 'Dirección y Subdirección definen las materias a impartir según el plan de estudios y la matrícula escolar proyectada.')">
                                                 <rect x="20" y="80" width="110" height="60" rx="10" fill="url(#grad-purple)" />
                                                 <text x="75" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">1. Definir</text>
-                                                <text x="75" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Carga Académica</text>
+                                                <text x="75" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Carga Académica</text>
                                             </g>
                                             
-                                            <path d="M 130 110 L 180 110" stroke="rgba(255,255,255,0.2)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
+                                            <path d="M 130 110 L 180 110" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
                                             
                                             <g class="flow-node" onclick="showFlowDetailDoc('2. Disponibilidad Docente', 'Se cotejan las horas disponibles de cada profesor, considerando su perfil profesional y compatibilidad de empleos.')">
                                                 <rect x="190" y="80" width="110" height="60" rx="10" fill="url(#grad-cyan)" />
                                                 <text x="245" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">2. Analizar</text>
-                                                <text x="245" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Compatibilidad</text>
+                                                <text x="245" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Compatibilidad</text>
                                             </g>
                                             
-                                            <path d="M 300 110 L 350 110" stroke="rgba(255,255,255,0.2)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
+                                            <path d="M 300 110 L 350 110" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
                                             
                                             <g class="flow-node" onclick="showFlowDetailDoc('3. Publicación de Horarios', 'Se consolidan las horas en el Google Sheet central y se publica el PDF para consulta de docentes y alumnos.')">
                                                 <rect x="360" y="80" width="110" height="60" rx="10" fill="url(#grad-green)" />
                                                 <text x="415" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">3. Publicar</text>
-                                                <text x="415" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Horarios Oficiales</text>
+                                                <text x="415" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Horarios Oficiales</text>
                                             </g>
                                         </svg>
                                         <div class="flow-detail-box" id="detail-docentes">
@@ -898,23 +898,23 @@
                                             <g class="flow-node" onclick="showFlowDetailOri('1. Detección', 'El tutor grupal o docente identifica conductas de alerta (académicas, conductuales o emocionales) y levanta el reporte.')">
                                                 <rect x="20" y="80" width="110" height="60" rx="10" fill="url(#grad-purple)" />
                                                 <text x="75" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">1. Detectar</text>
-                                                <text x="75" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Reporte de Tutor</text>
+                                                <text x="75" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Reporte de Tutor</text>
                                             </g>
                                             
-                                            <path d="M 130 110 L 180 110" stroke="rgba(255,255,255,0.2)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
+                                            <path d="M 130 110 L 180 110" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
                                             
                                             <g class="flow-node" onclick="showFlowDetailOri('2. Canalización', 'Orientación educativa cita al estudiante y a su tutor legal. Se realiza entrevista diagnóstica y se define plan de acción.')">
                                                 <rect x="190" y="80" width="110" height="60" rx="10" fill="url(#grad-cyan)" />
                                                 <text x="245" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">2. Canalizar</text>
-                                                <text x="245" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Plan de Acción</text>
+                                                <text x="245" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Plan de Acción</text>
                                             </g>
                                             
-                                            <path d="M 300 110 L 350 110" stroke="rgba(255,255,255,0.2)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
+                                            <path d="M 300 110 L 350 110" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
                                             
                                             <g class="flow-node" onclick="showFlowDetailOri('3. Seguimiento', 'Se evalúa periódicamente el progreso académico y socioemocional del estudiante, coordinándose con padres y docentes.')">
                                                 <rect x="360" y="80" width="110" height="60" rx="10" fill="url(#grad-green)" />
                                                 <text x="415" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">3. Seguimiento</text>
-                                                <text x="415" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Evaluación del Avance</text>
+                                                <text x="415" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Evaluación del Avance</text>
                                             </g>
                                         </svg>
                                         <div class="flow-detail-box" id="detail-orientacion">
@@ -955,23 +955,23 @@
                                             <g class="flow-node" onclick="showFlowDetailBib('1. Solicitud', 'El alumno busca el libro en el acervo físico, presenta su credencial de estudiante y solicita el préstamo.')">
                                                 <rect x="20" y="80" width="110" height="60" rx="10" fill="url(#grad-purple)" />
                                                 <text x="75" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">1. Solicitar</text>
-                                                <text x="75" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Credencial e ISBN</text>
+                                                <text x="75" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Credencial e ISBN</text>
                                             </g>
                                             
-                                            <path d="M 130 110 L 180 110" stroke="rgba(255,255,255,0.2)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
+                                            <path d="M 130 110 L 180 110" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
                                             
                                             <g class="flow-node" onclick="showFlowDetailBib('2. Registro de Préstamo', 'El bibliotecario registra el libro y la matrícula del alumno en el Google Sheet de préstamos, indicando la fecha de devolución.')">
                                                 <rect x="190" y="80" width="110" height="60" rx="10" fill="url(#grad-cyan)" />
                                                 <text x="245" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">2. Registrar</text>
-                                                <text x="245" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Fecha Límite</text>
+                                                <text x="245" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Fecha Límite</text>
                                             </g>
                                             
-                                            <path d="M 300 110 L 350 110" stroke="rgba(255,255,255,0.2)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
+                                            <path d="M 300 110 L 350 110" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
                                             
                                             <g class="flow-node" onclick="showFlowDetailBib('3. Devolución', 'El alumno entrega el libro. Se revisa el estado del material y se marca el préstamo como devuelto en el Google Sheet.')">
                                                 <rect x="360" y="80" width="110" height="60" rx="10" fill="url(#grad-green)" />
                                                 <text x="415" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">3. Devolución</text>
-                                                <text x="415" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Liberación/Multa</text>
+                                                <text x="415" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Liberación/Multa</text>
                                             </g>
                                         </svg>
                                         <div class="flow-detail-box" id="detail-biblioteca">
@@ -1135,23 +1135,23 @@
                                         <g class="flow-node" onclick="showFlowDetailInv('1. Registro y Plaqueo', 'Todo bien mueble que ingresa al CEB se registra en el catálogo de inventario con número de serie, factura y se le coloca una placa física.')">
                                             <rect x="20" y="80" width="110" height="60" rx="10" fill="url(#grad-gold)" />
                                             <text x="75" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">1. Registrar</text>
-                                            <text x="75" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Plaqueo y Catálogo</text>
+                                            <text x="75" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Plaqueo y Catálogo</text>
                                         </g>
                                         
-                                        <path d="M 130 110 L 180 110" stroke="rgba(255,255,255,0.2)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
+                                        <path d="M 130 110 L 180 110" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
                                         
                                         <g class="flow-node" onclick="showFlowDetailInv('2. Asignación y Resguardo', 'Se define el área física o el personal responsable a quien se le confía el bien. Se firma un acta de resguardo administrativo.')">
                                             <rect x="190" y="80" width="110" height="60" rx="10" fill="url(#grad-cyan)" />
                                             <text x="245" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">2. Asignar</text>
-                                            <text x="245" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Actas de Resguardo</text>
+                                            <text x="245" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Actas de Resguardo</text>
                                         </g>
                                         
-                                        <path d="M 300 110 L 350 110" stroke="rgba(255,255,255,0.2)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
+                                        <path d="M 300 110 L 350 110" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)" stroke-dasharray="4" class="flow-line" />
                                         
                                         <g class="flow-node" onclick="showFlowDetailInv('3. Auditoría Física', 'Anualmente la Coordinación Administrativa realiza un recorrido físico para verificar la ubicación, estado y conservación de cada activo.')">
                                             <rect x="360" y="80" width="110" height="60" rx="10" fill="url(#grad-green)" />
                                             <text x="415" y="105" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">3. Auditoría</text>
-                                            <text x="415" y="125" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Confrontación Física</text>
+                                            <text x="415" y="125" text-anchor="middle" fill="var(--text-secondary)" font-size="10">Confrontación Física</text>
                                         </g>
                                     </svg>
                                     <div class="flow-detail-box" id="detail-inventarios">

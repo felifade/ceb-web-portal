@@ -398,7 +398,7 @@ function horRenderGrid(sessions, viewType) {
         html +=
           '<td rowspan="' + span + '" class="sched-td-session"' +
               ' title="' + tooltip + '"' +
-              ' style="background:' + c.bg + '; border-left:4px solid ' + c.border + '; border-top: 1px solid rgba(255,255,255,0.05);">';
+              ' style="background:' + c.bg + '; border-left:4px solid ' + c.border + '; border-top: 1px solid var(--border-color);">';
               
         if (s.componente === 'EXTRAESCOLAR') {
           html += '<span class="sched-badge-extra">Extraescolar</span>';

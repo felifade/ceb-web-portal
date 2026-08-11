@@ -1374,7 +1374,7 @@ function renderExamsDirectory() {
         
         if (filteredWarnings.length === 0) {
             auditContainer.innerHTML = `
-                <div style="background: linear-gradient(135deg, hsla(142, 71%, 45%, 0.15) 0%, rgba(0,0,0,0) 100%); border: 1px solid var(--accent-green); padding: 15px 20px; border-radius: 10px; display: flex; align-items: center; gap: 12px;">
+                <div style="background: linear-gradient(135deg, hsla(142, 71%, 45%, 0.15) 0%, transparent 100%); border: 1px solid var(--accent-green); padding: 15px 20px; border-radius: 10px; display: flex; align-items: center; gap: 12px;">
                     <i class="fa-solid fa-circle-check" style="color: var(--accent-green); font-size: 18px;"></i>
                     <div>
                         <h4 style="margin: 0 0 2px 0; color: #fff; font-size: 13px;">Auditoría de Calendario: Correcta</h4>
@@ -1449,7 +1449,7 @@ function renderExamsDirectory() {
             }
             
             auditContainer.innerHTML = `
-                <div style="background: linear-gradient(135deg, hsla(355, 85%, 55%, 0.1) 0%, rgba(0,0,0,0) 100%); border: 1px solid hsla(355, 85%, 55%, 0.3); padding: 16px 20px; border-radius: 12px; box-shadow: var(--shadow-sm);">
+                <div style="background: linear-gradient(135deg, hsla(355, 85%, 55%, 0.1) 0%, transparent 100%); border: 1px solid hsla(355, 85%, 55%, 0.3); padding: 16px 20px; border-radius: 12px; box-shadow: var(--shadow-sm);">
                     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 8px;">
                         <div style="display: flex; align-items: center; gap: 8px;">
                             <i class="fa-solid fa-triangle-exclamation" style="color: var(--accent-red); font-size: 18px;"></i>

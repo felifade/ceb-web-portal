@@ -486,7 +486,7 @@ function renderEstructuraBlocks(filteredRows, viewType) {
         const titleColor = isDocenteView ? 'var(--accent-gold)' : 'var(--accent-purple)';
         
         html += `
-            <div class="est-group-block-wrapper" style="margin-bottom: 25px; background: rgba(255, 255, 255, 0.01); border: 1px solid var(--border-color); border-radius: 10px; padding: 15px;">
+            <div class="est-group-block-wrapper" style="margin-bottom: 25px; background: var(--border-color); border: 1px solid var(--border-color); border-radius: 10px; padding: 15px;">
                 <h3 style="color: #fff; margin-top: 0; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; font-size: 14.5px;">
                     <i class="fa-solid ${icon}" style="color: ${titleColor}; font-size: 14px;"></i>
                     ${titleLabel}: <span style="color: var(--accent-cyan); font-weight: 700;">${estEsc(key)}</span>
@@ -534,7 +534,7 @@ function buildCompactCardHTML(row, isDocenteView) {
     
     return `
         <div class="hor-mat-card" style="border-left: 4px solid ${c.border}; background: ${c.bg}; padding: 10px 12px; border-radius: 8px; transition: var(--transition-fast); display: flex; flex-direction: column; justify-content: space-between; gap: 4px; height: 100%; box-sizing: border-box;"
-             onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='rgba(255,255,255,0.15)';"
+             onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='var(--shadow-md)'; this.style.borderColor='var(--border-color)';"
              onmouseout="this.style.transform='none'; this.style.boxShadow='none'; this.style.borderColor='var(--border-color)';"
              title="${estEsc(row.uac)} · ${estEsc(row.docente || 'VACANTE')} · ${hrsStr}">
             <div class="hor-mat-name" style="color: ${c.text}; font-size: 12.5px; font-weight: 700; margin-bottom: 2px; line-height: 1.25; word-break: break-word;">
@@ -544,7 +544,7 @@ function buildCompactCardHTML(row, isDocenteView) {
                 ${cardDesc}
             </div>
             <div class="hor-mat-comp" style="margin-bottom: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
-                <span class="badge-tag" style="font-size: 9px; padding: 2px 5px; background: rgba(255, 255, 255, 0.05); color: var(--text-muted); border-radius: 4px; text-transform: uppercase; font-weight: 500; letter-spacing: 0.3px;">
+                <span class="badge-tag" style="font-size: 9px; padding: 2px 5px; background: var(--border-color); color: var(--text-muted); border-radius: 4px; text-transform: uppercase; font-weight: 500; letter-spacing: 0.3px;">
                     ${estEsc(campo)}
                 </span>
             </div>

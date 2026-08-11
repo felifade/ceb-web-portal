@@ -30,7 +30,7 @@
     --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
     --shadow-lg: 0 10px 30px rgba(0,0,0,0.1);
-    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-bg: var(--text-secondary);
     --glass-border: rgba(226, 232, 240, 0.8);
     
     --shadow-glow-blue: 0 0 15px rgba(37, 99, 235, 0.15);
@@ -171,7 +171,7 @@ body {
 }
 
 .nav-btn.active {
-    background: linear-gradient(90deg, hsla(217, 91%, 60%, 0.15) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, hsla(217, 91%, 60%, 0.15) 0%, transparent 100%);
     color: var(--accent-blue);
     border-left: 3px solid var(--accent-blue);
     padding-left: 13px; /* keep offset aligned */
@@ -182,21 +182,21 @@ body {
 }
 
 #nav-direccion.active {
-    background: linear-gradient(90deg, hsla(190, 95%, 44%, 0.15) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, hsla(190, 95%, 44%, 0.15) 0%, transparent 100%);
     color: var(--accent-cyan);
     border-left-color: var(--accent-cyan);
 }
 #nav-direccion.active i { color: var(--accent-cyan); }
 
 #nav-subdireccion.active {
-    background: linear-gradient(90deg, hsla(262, 83%, 58%, 0.15) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, hsla(262, 83%, 58%, 0.15) 0%, transparent 100%);
     color: var(--accent-purple);
     border-left-color: var(--accent-purple);
 }
 #nav-subdireccion.active i { color: var(--accent-purple); }
 
 #nav-coordinacion.active {
-    background: linear-gradient(90deg, hsla(38, 92%, 50%, 0.15) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, hsla(38, 92%, 50%, 0.15) 0%, transparent 100%);
     color: var(--accent-gold);
     border-left-color: var(--accent-gold);
 }
@@ -474,7 +474,7 @@ body {
     right: -20%;
     width: 300px;
     height: 300px;
-    background: radial-gradient(circle, hsla(190, 95%, 44%, 0.15) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, hsla(190, 95%, 44%, 0.15) 0%, transparent 70%);
     z-index: 1;
 }
 
@@ -524,7 +524,7 @@ body {
 
 .metric-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--border-color);
 }
 
 .cyan-glow:hover { box-shadow: var(--shadow-glow-cyan); }
@@ -669,7 +669,7 @@ body {
 
 .area-nav-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255,255,255,0.15);
+    border-color: var(--border-color);
     box-shadow: var(--shadow-md);
 }
 
@@ -683,10 +683,10 @@ body {
     font-family: var(--font-heading);
 }
 
-.dir-color { background: linear-gradient(135deg, hsla(190, 95%, 44%, 0.3) 0%, rgba(0,0,0,0) 100%); border-bottom: 2px solid var(--accent-cyan); }
-.subdir-color { background: linear-gradient(135deg, hsla(262, 83%, 58%, 0.3) 0%, rgba(0,0,0,0) 100%); border-bottom: 2px solid var(--accent-purple); }
-.admin-color { background: linear-gradient(135deg, hsla(38, 92%, 50%, 0.3) 0%, rgba(0,0,0,0) 100%); border-bottom: 2px solid var(--accent-gold); }
-.organigrama-color { background: linear-gradient(135deg, hsla(142, 71%, 45%, 0.3) 0%, rgba(0,0,0,0) 100%); border-bottom: 2px solid var(--accent-green); }
+.dir-color { background: linear-gradient(135deg, hsla(190, 95%, 44%, 0.3) 0%, transparent 100%); border-bottom: 2px solid var(--accent-cyan); }
+.subdir-color { background: linear-gradient(135deg, hsla(262, 83%, 58%, 0.3) 0%, transparent 100%); border-bottom: 2px solid var(--accent-purple); }
+.admin-color { background: linear-gradient(135deg, hsla(38, 92%, 50%, 0.3) 0%, transparent 100%); border-bottom: 2px solid var(--accent-gold); }
+.organigrama-color { background: linear-gradient(135deg, hsla(142, 71%, 45%, 0.3) 0%, transparent 100%); border-bottom: 2px solid var(--accent-green); }
 
 .area-header i {
     font-size: 22px;
@@ -1044,13 +1044,13 @@ body {
 
 .flow-node rect {
     transition: var(--transition-fast);
-    stroke: rgba(255,255,255,0.1);
+    stroke: var(--border-color);
     stroke-width: 1;
 }
 
 .flow-node:hover rect {
     filter: brightness(1.2);
-    stroke: rgba(255,255,255,0.5);
+    stroke: var(--text-secondary);
     stroke-width: 2;
     transform: translateY(-2px);
 }
@@ -1370,7 +1370,7 @@ body {
 .group-card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--border-color);
 }
 
 .group-card-header {
@@ -1382,10 +1382,10 @@ body {
 }
 
 /* Semester-based headers */
-.grad-sem2 { background: linear-gradient(135deg, hsla(190, 95%, 44%, 0.25) 0%, rgba(0,0,0,0) 100%); border-bottom: 2px solid var(--accent-cyan); }
-.grad-sem4 { background: linear-gradient(135deg, hsla(262, 83%, 58%, 0.25) 0%, rgba(0,0,0,0) 100%); border-bottom: 2px solid var(--accent-purple); }
-.grad-sem6 { background: linear-gradient(135deg, hsla(38, 92%, 50%, 0.25) 0%, rgba(0,0,0,0) 100%); border-bottom: 2px solid var(--accent-gold); }
-.grad-sem-other { background: linear-gradient(135deg, hsla(217, 91%, 60%, 0.25) 0%, rgba(0,0,0,0) 100%); border-bottom: 2px solid var(--accent-blue); }
+.grad-sem2 { background: linear-gradient(135deg, hsla(190, 95%, 44%, 0.25) 0%, transparent 100%); border-bottom: 2px solid var(--accent-cyan); }
+.grad-sem4 { background: linear-gradient(135deg, hsla(262, 83%, 58%, 0.25) 0%, transparent 100%); border-bottom: 2px solid var(--accent-purple); }
+.grad-sem6 { background: linear-gradient(135deg, hsla(38, 92%, 50%, 0.25) 0%, transparent 100%); border-bottom: 2px solid var(--accent-gold); }
+.grad-sem-other { background: linear-gradient(135deg, hsla(217, 91%, 60%, 0.25) 0%, transparent 100%); border-bottom: 2px solid var(--accent-blue); }
 
 .group-card-title {
     font-family: var(--font-heading);
@@ -1518,7 +1518,7 @@ body {
 }
 
 .week-card-header {
-    background: linear-gradient(135deg, hsla(38, 92%, 50%, 0.1) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(135deg, hsla(38, 92%, 50%, 0.1) 0%, transparent 100%);
     border-bottom: 1px solid var(--border-color);
     padding: 14px 18px;
     display: flex;
@@ -1582,7 +1582,7 @@ body {
 .resp-general { background-color: hsla(215, 15%, 45%, 0.15); color: var(--text-secondary); }
 
 .holiday-badge {
-    background: linear-gradient(90deg, hsla(355, 85%, 55%, 0.2) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(90deg, hsla(355, 85%, 55%, 0.2) 0%, transparent 100%);
     border: 1px solid hsla(355, 85%, 55%, 0.4);
     border-radius: 8px;
     padding: 10px 14px;
@@ -1671,7 +1671,7 @@ body {
     display: inline-block;
     width: 16px;
     height: 16px;
-    border: 2px solid rgba(255,255,255,0.3);
+    border: 2px solid var(--text-muted);
     border-radius: 50%;
     border-top-color: #fff;
     animation: spin 1s ease-in-out infinite;
@@ -1710,7 +1710,7 @@ body {
 }
 
 .exam-day-header {
-    background: linear-gradient(135deg, hsla(190, 95%, 44%, 0.15) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(135deg, hsla(190, 95%, 44%, 0.15) 0%, transparent 100%);
     border-bottom: 2px solid var(--accent-cyan);
     padding: 14px 18px;
     display: flex;
@@ -1798,7 +1798,7 @@ body {
 
 .exam-slot-item:hover {
     background-color: hsla(217, 30%, 15%, 0.5);
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-color);
 }
 
 .exam-slot-item:last-child {
@@ -2211,7 +2211,7 @@ body {
 .hor-mat-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
-    border-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--border-color);
 }
 
 .hor-mat-name {
@@ -2604,7 +2604,7 @@ body {
     font-weight: 700;
     color: #fff;
     flex-shrink: 0;
-    box-shadow: inset 0 2px 4px rgba(255,255,255,0.2);
+    box-shadow: inset 0 2px 4px var(--text-muted);
 }
 
 .node-avatar-placeholder.sm {
@@ -2690,7 +2690,7 @@ body {
     height: 52px;
     border-radius: 50%;
     padding: 2px;
-    background: linear-gradient(135deg, var(--details-accent, var(--accent-blue)) 0%, rgba(255,255,255,0.1) 100%);
+    background: linear-gradient(135deg, var(--details-accent, var(--accent-blue)) 0%, var(--border-color) 100%);
     box-shadow: var(--shadow-sm);
 }
 
@@ -2705,7 +2705,7 @@ body {
     font-size: 16px;
     font-weight: 700;
     color: #fff;
-    box-shadow: inset 0 2px 4px rgba(255,255,255,0.25);
+    box-shadow: inset 0 2px 4px var(--text-muted);
 }
 
 .detail-section-title {
@@ -2835,15 +2835,15 @@ body {
     width: 6px;
 }
 .personal-assigned-grid::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--border-color);
     border-radius: 4px;
 }
 .personal-assigned-grid::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--border-color);
     border-radius: 4px;
 }
 .personal-assigned-grid::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--text-muted);
 }
 
 .personal-card {
@@ -3297,7 +3297,7 @@ body {
     font-size: 24px;
     font-weight: 700;
     color: #fff;
-    border: 3px solid rgba(255, 255, 255, 0.08);
+    border: 3px solid var(--border-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
