@@ -2662,10 +2662,10 @@ body {
 }
 
 /* Active / Selected States */
-.organigrama-node.active-node {
+.organigrama-node.active-node, .organigrama-node.active {
     border-color: var(--active-accent, var(--accent-blue)) !important;
     box-shadow: 0 0 12px var(--active-glow, hsla(217, 91%, 60%, 0.35)) !important;
-    background-color: hsla(223, 47%, 18%, 0.8);
+    background-color: var(--bg-card-hover) !important;
 }
 
 .organigrama-node.dimmed {

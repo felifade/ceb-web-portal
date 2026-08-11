@@ -1291,7 +1291,7 @@
                                 <div class="card-header" id="details-card-header" style="border-bottom: 1px solid var(--border-color); padding-bottom:15px; display:flex; flex-direction:column; gap:12px; align-items:stretch;">
                                     <div class="details-search-container" style="display:flex; width:100%; position:relative;">
                                         <i class="fa-solid fa-magnifying-glass" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:12px;"></i>
-                                        <input type="text" id="organigrama-search" placeholder="Buscar funciones, tareas o puestos..." oninput="handleOrganigramaSearch()" style="width:100%; padding: 8px 12px 8px 32px; border-radius: 8px; background: hsla(217, 30%, 15%, 0.4); border: 1px solid var(--border-color); color: #fff; font-size:12px; outline:none; transition: var(--transition-fast);">
+                                        <input type="text" id="organigrama-search" placeholder="Buscar funciones, tareas o puestos..." oninput="handleOrganigramaSearch()" style="width:100%; padding: 8px 12px 8px 32px; border-radius: 8px; background: color-mix(in srgb, var(--text-primary) 5%, var(--bg-card)); border: 1px solid var(--border-color); color: var(--text-primary); font-size:12px; outline:none; transition: var(--transition-fast);">
                                     </div>
                                     <div style="display:flex; gap:16px; align-items:center; margin-top:5px;">
                                         <div class="detail-avatar-container">
@@ -1311,7 +1311,7 @@
                                 <div class="card-body" style="padding-top:20px;">
                                     <div class="detail-section mb-20" style="margin-bottom:20px;">
                                         <h4 class="detail-section-title" style="font-size:11px; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px; display:flex; align-items:center; gap:6px;"><i class="fa-solid fa-bullseye" id="details-mission-icon" style="color:var(--accent-blue);"></i> Misión / Objetivo General</h4>
-                                        <p id="details-role-mission" style="font-size:13px; line-height:1.6; color:var(--text-secondary); background: hsla(217, 30%, 15%, 0.2); padding: 12px; border-radius: 8px; border-left: 3px solid var(--accent-blue); margin-bottom:0;">
+                                        <p id="details-role-mission" style="font-size:13px; line-height:1.6; color:var(--text-secondary); background: color-mix(in srgb, var(--text-primary) 5%, var(--bg-card)); padding: 12px; border-radius: 8px; border-left: 3px solid var(--accent-blue); margin-bottom:0;">
                                             Dirigir, coordinar y supervisar de manera integral la prestación del servicio educativo en el plantel, asegurando la aplicación de los planes y programas de estudio de la DGB y el cumplimiento de las metas del Programa de Mejora Continua.
                                         </p>
                                     </div>
@@ -1324,13 +1324,13 @@
                                     <div class="detail-section" id="details-personal-section" style="margin-top:24px; border-top: 1px solid var(--border-color); padding-top:20px;">
                                         <h4 class="detail-section-title" style="font-size:11px; color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; gap:6px;">
                                             <span style="display:flex; align-items:center; gap:6px;"><i class="fa-solid fa-users-gear" id="details-personal-icon" style="color:var(--accent-blue);"></i> Personal Asignado</span>
-                                            <span id="personal-count-badge" class="badge-tag" style="font-size:10px; padding:2px 6px; border-radius:10px; background:hsla(217, 30%, 15%, 0.6); color:var(--text-muted);">0</span>
+                                            <span id="personal-count-badge" class="badge-tag" style="font-size:10px; padding:2px 6px; border-radius:10px; background:color-mix(in srgb, var(--text-primary) 15%, var(--bg-card)); color:var(--text-primary);">0</span>
                                         </h4>
                                         
                                         <!-- Buscador secundario para Docentes/Personal (se muestra dinámicamente) -->
                                         <div id="personal-search-container" style="display:none; margin-bottom:12px; position:relative;">
                                             <i class="fa-solid fa-filter" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); color:var(--text-muted); font-size:10px;"></i>
-                                            <input type="text" id="personal-search" placeholder="Filtrar por nombre o plaza..." oninput="handlePersonalSearch()" style="width:100%; padding: 6px 10px 6px 26px; border-radius: 6px; background: hsla(217, 30%, 15%, 0.3); border: 1px solid var(--border-color); color: #fff; font-size:11px; outline:none;">
+                                            <input type="text" id="personal-search" placeholder="Filtrar por nombre o plaza..." oninput="handlePersonalSearch()" style="width:100%; padding: 6px 10px 6px 26px; border-radius: 6px; background: color-mix(in srgb, var(--text-primary) 5%, var(--bg-card)); border: 1px solid var(--border-color); color: var(--text-primary); font-size:11px; outline:none;">
                                         </div>
                                         
                                         <div class="personal-assigned-grid" id="personal-assigned-list">
