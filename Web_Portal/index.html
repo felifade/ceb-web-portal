@@ -54,6 +54,9 @@
                 <button class="nav-btn" id="nav-normativa" onclick="switchTab('normativa')">
                     <i class="fa-solid fa-scale-balanced"></i> <span>Normativa y Marco Legal</span>
                 </button>
+                <button class="nav-btn" id="nav-pec" onclick="switchTab('pec')">
+                    <i class="fa-solid fa-leaf"></i> <span>Proyectos PEC</span>
+                </button>
             </nav>
             
             <div class="sidebar-footer">
@@ -1480,6 +1483,29 @@
                     </div>
                 </section>
 
+                <!-- 8. PROYECTOS ESCOLARES COMUNITARIOS (PEC) -->
+                <section class="page-section" id="page-pec">
+                    <div class="page-header-title">
+                        <h1><i class="fa-solid fa-leaf"></i> Proyectos Escolares Comunitarios (PEC)</h1>
+                        <p>Gestión histórica y activa de los proyectos transversales del plantel. Cambia el ciclo para consultar el histórico.</p>
+                    </div>
+
+                    <!-- Selector de Ciclo -->
+                    <div class="pec-cycle-bar">
+                        <div class="pec-cycle-bar-label">
+                            <i class="fa-solid fa-rotate"></i> Selecciona el ciclo:
+                        </div>
+                        <div id="pec-cycle-selector" class="pec-cycle-tabs"></div>
+                    </div>
+
+                    <!-- Encabezado del ciclo activo -->
+                    <div id="pec-cycle-header" class="pec-cycle-header-block"></div>
+
+                    <!-- Grid de tarjetas de proyectos -->
+                    <div id="pec-proyectos-grid" class="pec-proyectos-grid"></div>
+
+                </section>
+
             </div>
             
             <footer class="portal-footer">
@@ -1501,5 +1527,7 @@
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/minisearch.min.js"></script>
     <script src="normativa/normativa.js"></script>
+    <script src="pec_data.js"></script>
+    <script src="app_pec.js"></script>
 </body>
 </html>

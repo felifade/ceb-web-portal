@@ -3800,3 +3800,353 @@ body {
     margin-bottom: 16px !important;
     font-weight: 500;
 }
+
+/* ==========================================================================
+   MÓDULO PEC — Proyectos Escolares Comunitarios
+   ========================================================================== */
+
+/* ── Barra de selección de ciclos ── */
+.pec-cycle-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+}
+
+.pec-cycle-bar-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.pec-cycle-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.pec-cycle-tab {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    position: relative;
+}
+
+.pec-cycle-tab:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+    background: color-mix(in srgb, var(--accent-green) 8%, var(--bg-card));
+}
+
+.pec-cycle-tab.active {
+    border-color: var(--accent-green);
+    background: color-mix(in srgb, var(--accent-green) 12%, var(--bg-card));
+    color: var(--accent-green);
+    font-weight: 600;
+}
+
+.pec-cycle-tab.historico {
+    border-style: dashed;
+    opacity: 0.8;
+}
+
+.pec-cycle-tab.historico.active {
+    border-color: var(--text-muted);
+    color: var(--text-secondary);
+    background: color-mix(in srgb, var(--text-primary) 5%, var(--bg-card));
+}
+
+.pec-default-badge {
+    background: var(--accent-green);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+}
+
+/* ── Encabezado del ciclo ── */
+.pec-cycle-header-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+}
+
+.pec-header-main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.pec-header-main h2 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.pec-header-main h2 i { color: var(--accent-green); }
+
+.pec-periodo {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.pec-descripcion {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.pec-tema-general {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: color-mix(in srgb, var(--accent-green) 10%, var(--bg-card));
+    border: 1px solid color-mix(in srgb, var(--accent-green) 30%, var(--border-color));
+    color: var(--text-primary);
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    margin-top: 4px;
+}
+
+.pec-tema-general i { color: var(--accent-green); }
+
+.pec-archive-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: color-mix(in srgb, var(--text-muted) 8%, var(--bg-card));
+    border: 1px dashed var(--border-color);
+    color: var(--text-muted);
+    font-size: 13px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+/* ── Grid de Proyectos ── */
+.pec-proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+
+.pec-project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.pec-project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.pec-project-card.historico {
+    opacity: 0.82;
+}
+
+.pec-project-card.historico:hover {
+    opacity: 1;
+}
+
+/* Card header */
+.pec-card-header {
+    padding: 18px 18px 14px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pec-card-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.pec-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.pec-card-title {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 4px;
+    line-height: 1.3;
+}
+
+.pec-turno-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: color-mix(in srgb, var(--text-primary) 6%, var(--bg-card));
+    border: 1px solid var(--border-color);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.ml-auto { margin-left: auto; }
+
+/* Card body */
+.pec-card-body {
+    padding: 16px 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.pec-objetivo {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pec-docentes-section h4 {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pec-teachers-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pec-teacher-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.pec-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent-green) 20%, var(--bg-card));
+    color: var(--accent-green);
+    font-size: 10px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pec-sin-docentes {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+}
+
+/* Links row */
+.pec-links-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.pec-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition-fast);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    background: color-mix(in srgb, var(--text-primary) 4%, var(--bg-card));
+}
+
+.pec-link-btn:hover {
+    background: color-mix(in srgb, var(--accent-green) 10%, var(--bg-card));
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+}
+
+/* ── Badges de estado ── */
+.badge-finalizado {
+    background: color-mix(in srgb, var(--text-muted) 15%, var(--bg-card));
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+}
+
+.badge-en-curso {
+    background: color-mix(in srgb, var(--accent-green) 12%, var(--bg-card));
+    color: var(--accent-green);
+    border: 1px solid color-mix(in srgb, var(--accent-green) 30%, var(--border-color));
+}
+
+.badge-planeacion {
+    background: color-mix(in srgb, var(--accent-gold) 12%, var(--bg-card));
+    color: var(--accent-gold);
+    border: 1px solid color-mix(in srgb, var(--accent-gold) 30%, var(--border-color));
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+    .pec-proyectos-grid {
+        grid-template-columns: 1fr;
+    }
+    .pec-cycle-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

@@ -244,6 +244,12 @@ function switchTab(tabId) {
     
     // Scroll page-container to top
     document.querySelector(".page-container").scrollTop = 0;
+
+    // Inicializar módulo PEC la primera vez que se visita
+    if (tabId === 'pec' && typeof window.initPEC === 'function') {
+        window.initPEC();
+        window.initPEC = null; // Solo inicializar una vez
+    }
 }
 
 // Subdirección Area Tabs switching

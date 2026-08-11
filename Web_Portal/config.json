@@ -1,7 +1,8 @@
 {
   "schoolName": "Centro de Estudios de Bachillerato (CEB)",
   "subtitle": "Portal de Gestión de Procesos Directiva y Administrativa",
-  "activeCycle": "B.25.26",
+  "activeCycle": "A.26.27",
+  "activePecCycle": "A.26.27",
   "cycles": {
     "B.25.26": {
       "name": "Ciclo B.25.26 (Feb - Jul 2026)",
