@@ -342,15 +342,32 @@ function setupSearchUI() {
 // ============================================
 // INTEGRATION & INITIALIZATION
 // ============================================
+let searchInitStarted = false;
+
 async function loadNormativaData() {
     if (isDataLoaded) return;
     isDataLoaded = true;
     
-    // Fetch JSONs in parallel
-    await Promise.all([
-        initCatalog(),
-        initSearch()
-    ]);
+    // Solo cargar el catálogo de inmediato (es ligero)
+    await initCatalog();
+    // El buscador se carga SOLO cuando el usuario lo necesite
+}
+
+async function loadSearchIfNeeded() {
+    if (MS || searchInitStarted) return; // Ya está cargado o en proceso
+    searchInitStarted = true;
+    
+    // Mostrar indicador de carga
+    const statusEl = document.getElementById('norma-search-status');
+    if (statusEl) statusEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Cargando índice de búsqueda (1,187 páginas)...';
+    
+    // Pequeña pausa para que el navegador pinte el spinner
+    await new Promise(r => setTimeout(r, 50));
+    await initSearch();
+    
+    if (statusEl && MS) {
+        statusEl.innerHTML = '<i class="fa-solid fa-check" style="color:var(--accent-green)"></i> Índice listo — busca en 1,187 páginas de normativa.';
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -365,7 +382,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Lazy Load integration
-    // Si la función switchTab del portal ya existe, la decoramos (override)
     if (typeof window.switchTab === 'function') {
         const originalSwitchTab = window.switchTab;
         window.switchTab = function(tabId) {
@@ -375,17 +391,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
     } else {
-        // Fallback: escuchar clicks generales e intentar inicializar si la pestaña se activa
         const checkTab = () => {
-            // Verificar si el contenedor de normativa se hace visible
             const normativaContainer = document.getElementById('tab-normativa');
             if (normativaContainer && !normativaContainer.classList.contains('hidden') && normativaContainer.style.display !== 'none') {
                 loadNormativaData();
             }
         };
-        
         document.addEventListener('click', () => setTimeout(checkTab, 50));
-        // Check once right away in case it's the active default tab
         setTimeout(checkTab, 100);
     }
 });
+
+// Interceptar clics en el input de búsqueda y sub-tab buscador para cargar el índice bajo demanda
+document.addEventListener('click', (e) => {
+    const target = e.target;
+    // Si hacen clic en el input de búsqueda o en la pestaña "Buscador"
+    if (target.id === 'norma-search-input' || 
+        (target.textContent && target.textContent.includes('Buscador')) ||
+        target.closest?.('#normativa-buscador')) {
+        loadSearchIfNeeded();
+    }
+});
+document.addEventListener('focus', (e) => {
+    if (e.target.id === 'norma-search-input') {
+        loadSearchIfNeeded();
+    }
+}, true);
