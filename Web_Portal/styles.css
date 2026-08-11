@@ -3699,25 +3699,25 @@ body {
 }
 
 .identidad-card, .disciplina-card {
-    padding: 20px;
-    border-radius: 8px;
+    padding: 24px;
+    border-radius: 12px;
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
-    transition: var(--transition-fast);
+    transition: var(--transition-smooth);
 }
 
 .identidad-card:hover, .disciplina-card:hover {
     box-shadow: var(--shadow-md);
-    background-color: var(--bg-card-hover);
 }
 
 .identidad-card h3, .disciplina-card h3 {
     margin-top: 0;
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 15px;
+    gap: 10px;
+    margin-bottom: 16px;
+    font-size: 1.25rem;
 }
 
 .identidad-card p, .disciplina-card p, .disciplina-card ul {
@@ -3732,21 +3732,29 @@ body {
 }
 
 .disciplina-card ul li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
-/* Colors for specific cards adapting to themes */
-.mision-card { border-left: 4px solid var(--accent-cyan); }
+/* Colors for specific cards adapting to themes using color-mix for a premium tint */
+.mision-card { 
+    background-color: color-mix(in srgb, var(--accent-cyan) 8%, var(--bg-card));
+    border-left: 4px solid var(--accent-cyan); 
+}
+.mision-card:hover { background-color: color-mix(in srgb, var(--accent-cyan) 12%, var(--bg-card)); }
 .mision-card h3 { color: var(--accent-cyan); }
 
-.vision-card { border-left: 4px solid var(--accent-purple); }
+.vision-card { 
+    background-color: color-mix(in srgb, var(--accent-purple) 8%, var(--bg-card));
+    border-left: 4px solid var(--accent-purple); 
+}
+.vision-card:hover { background-color: color-mix(in srgb, var(--accent-purple) 12%, var(--bg-card)); }
 .vision-card h3 { color: var(--accent-purple); }
 
 .disciplina-section {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 25px;
+    border-radius: 12px;
+    padding: 30px;
     margin-bottom: 30px;
     box-shadow: var(--shadow-sm);
 }
@@ -3756,29 +3764,39 @@ body {
     margin-top: 0;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 15px;
-    margin-bottom: 20px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    font-size: 1.5rem;
 }
 
 .disciplina-intro {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
     color: var(--text-secondary);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .icon-gold { color: var(--accent-gold); }
 
-.uniforme-card { border-left: 4px solid var(--accent-gold); }
+.uniforme-card { 
+    background-color: color-mix(in srgb, var(--accent-gold) 8%, var(--bg-card));
+    border-left: 4px solid var(--accent-gold); 
+}
+.uniforme-card:hover { background-color: color-mix(in srgb, var(--accent-gold) 12%, var(--bg-card)); }
 .uniforme-card h3 { color: var(--accent-gold); }
 
-.personal-card { border-left: 4px solid var(--accent-green); }
+.personal-card { 
+    background-color: color-mix(in srgb, var(--accent-green) 8%, var(--bg-card));
+    border-left: 4px solid var(--accent-green); 
+}
+.personal-card:hover { background-color: color-mix(in srgb, var(--accent-green) 12%, var(--bg-card)); }
 .personal-card h3 { color: var(--accent-green); }
 
 .disciplina-subtitle {
-    font-size: 0.9rem !important;
-    color: var(--text-muted) !important;
-    margin-bottom: 15px !important;
+    font-size: 0.95rem !important;
+    color: var(--text-secondary) !important;
+    margin-bottom: 16px !important;
+    font-weight: 500;
 }
