@@ -20,54 +20,54 @@ const PEC_DATA = {
         descripcion: "Ciclo correspondiente al semestre B del ciclo escolar 2025-2026, gestionado bajo la estructura de la DGB.",
         proyectos: [
             {
-                id: "2m",
-                semestre: 2,
+                id: "1m",
+                semestre: 1,
                 turno: "Matutino",
-                nombre: "Proyecto PEC 2° Matutino",
-                objetivo: "Desarrollar habilidades para el bienestar comunitario y el crecimiento académico entre los estudiantes de segundo semestre del turno matutino.",
+                nombre: "Proyecto PEC 1° Matutino",
+                objetivo: "Desarrollar habilidades para el bienestar comunitario y el crecimiento académico entre los estudiantes de primer semestre del turno matutino.",
                 docentes: [],
                 estado: "Finalizado",
                 urlDocumento: "",
                 urlPresentacion: ""
             },
             {
-                id: "2v",
-                semestre: 2,
+                id: "1v",
+                semestre: 1,
                 turno: "Vespertino",
-                nombre: "Proyecto PEC 2° Vespertino",
-                objetivo: "Desarrollar habilidades para el bienestar comunitario y el crecimiento académico entre los estudiantes de segundo semestre del turno vespertino.",
+                nombre: "Proyecto PEC 1° Vespertino",
+                objetivo: "Desarrollar habilidades para el bienestar comunitario y el crecimiento académico entre los estudiantes de primer semestre del turno vespertino.",
                 docentes: [],
                 estado: "Finalizado",
                 urlDocumento: "",
                 urlPresentacion: ""
             },
             {
-                id: "4m",
-                semestre: 4,
+                id: "3m",
+                semestre: 3,
                 turno: "Matutino",
-                nombre: "Proyecto PEC 4° Matutino",
-                objetivo: "Fortalecer competencias transversales de investigación, análisis crítico y presentación de resultados entre los estudiantes de cuarto semestre matutino.",
+                nombre: "Proyecto PEC 3° Matutino",
+                objetivo: "Fortalecer competencias transversales de investigación, análisis crítico y presentación de resultados entre los estudiantes de tercer semestre matutino.",
                 docentes: [],
                 estado: "Finalizado",
                 urlDocumento: "",
                 urlPresentacion: ""
             },
             {
-                id: "4v",
-                semestre: 4,
+                id: "3v",
+                semestre: 3,
                 turno: "Vespertino",
-                nombre: "Proyecto PEC 4° Vespertino",
-                objetivo: "Fortalecer competencias transversales de investigación, análisis crítico y presentación de resultados entre los estudiantes de cuarto semestre vespertino.",
+                nombre: "Proyecto PEC 3° Vespertino",
+                objetivo: "Fortalecer competencias transversales de investigación, análisis crítico y presentación de resultados entre los estudiantes de tercer semestre vespertino.",
                 docentes: [],
                 estado: "Finalizado",
                 urlDocumento: "",
                 urlPresentacion: ""
             },
             {
-                id: "6",
-                semestre: 6,
+                id: "5",
+                semestre: 5,
                 turno: "Ambos Turnos",
-                nombre: "Proyecto PEC 6° Semestre",
+                nombre: "Proyecto PEC 5° Semestre",
                 objetivo: "Consolidar la formación integral del estudiante egresante con un proyecto de impacto comunitario que integre las competencias desarrolladas a lo largo del bachillerato.",
                 docentes: [],
                 estado: "Finalizado",
@@ -88,10 +88,10 @@ const PEC_DATA = {
         descripcion: "Primer semestre bajo la nueva gestión de la Mtra. Maribel Alba Monroy. La disciplina institucional y el sentido de pertenencia son los ejes transversales de este ciclo.",
         proyectos: [
             {
-                id: "2m",
-                semestre: 2,
+                id: "1m",
+                semestre: 1,
                 turno: "Matutino",
-                nombre: "Proyecto PEC 2° Matutino",
+                nombre: "Proyecto PEC 1° Matutino",
                 objetivo: "Por definir — Primer parcial.",
                 docentes: [],
                 estado: "Planeación",
@@ -99,10 +99,10 @@ const PEC_DATA = {
                 urlPresentacion: ""
             },
             {
-                id: "2v",
-                semestre: 2,
+                id: "1v",
+                semestre: 1,
                 turno: "Vespertino",
-                nombre: "Proyecto PEC 2° Vespertino",
+                nombre: "Proyecto PEC 1° Vespertino",
                 objetivo: "Por definir — Primer parcial.",
                 docentes: [],
                 estado: "Planeación",
@@ -110,10 +110,10 @@ const PEC_DATA = {
                 urlPresentacion: ""
             },
             {
-                id: "4m",
-                semestre: 4,
+                id: "3m",
+                semestre: 3,
                 turno: "Matutino",
-                nombre: "Proyecto PEC 4° Matutino",
+                nombre: "Proyecto PEC 3° Matutino",
                 objetivo: "Por definir — Primer parcial.",
                 docentes: [],
                 estado: "Planeación",
@@ -121,10 +121,10 @@ const PEC_DATA = {
                 urlPresentacion: ""
             },
             {
-                id: "4v",
-                semestre: 4,
+                id: "3v",
+                semestre: 3,
                 turno: "Vespertino",
-                nombre: "Proyecto PEC 4° Vespertino",
+                nombre: "Proyecto PEC 3° Vespertino",
                 objetivo: "Por definir — Primer parcial.",
                 docentes: [],
                 estado: "Planeación",
@@ -132,10 +132,10 @@ const PEC_DATA = {
                 urlPresentacion: ""
             },
             {
-                id: "6",
-                semestre: 6,
+                id: "5",
+                semestre: 5,
                 turno: "Ambos Turnos",
-                nombre: "Proyecto PEC 6° Semestre",
+                nombre: "Proyecto PEC 5° Semestre",
                 objetivo: "Por definir — Primer parcial.",
                 docentes: [],
                 estado: "Planeación",
@@ -144,6 +144,7 @@ const PEC_DATA = {
             }
         ]
     }
+
 
 };
 
